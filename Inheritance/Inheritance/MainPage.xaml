@@ -16,8 +16,9 @@
                    Color="LightGray"
                    Margin ="40, 0, 40, 0"/>
         <ListView x:Name="contentLibraryListView"/>
-
-
+        <Button x:Name="playButton" Text="Play" Clicked="playButtonClicked"/>
+        <Button x:Name="viewButton" Text="View" Clicked="viewButtonClicked"/>
+        <Label x:Name="stateMessage" Text=""/>
     </StackLayout>
 
 </ContentPage>

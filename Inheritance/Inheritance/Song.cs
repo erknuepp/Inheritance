@@ -17,14 +17,14 @@
             this.playTime = playTime;
         }
 
-        public void Play()
+        public string Play()
         {
-            Console.WriteLine("A song is being played.");
+            return("A song is being played.");
         }
 
-        public void Listen()
+        public string Listen()
         {
-            Console.WriteLine("A song is being listened to.");
+            return("A song is being listened to.");
         }
 
         public TimeSpan PlayTime => playTime;

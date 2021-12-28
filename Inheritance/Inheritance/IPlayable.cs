@@ -6,6 +6,6 @@
 
     public interface IPlayable
     {
-        void Play();
+        string Play();
     }
 }

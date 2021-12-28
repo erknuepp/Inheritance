@@ -17,14 +17,14 @@
             _songs = songs;
         }
 
-        public void Play()
+        public string Play()
         {
-            Console.WriteLine("An album is being played.");
+            return("An album is being played.");
         }
 
-        public void Listen()
+        public string Listen()
         {
-            Console.WriteLine("An album is being listened to.");
+            return("An album is being listened to.");
         }
 
         public int SongCount => _songs.Count;

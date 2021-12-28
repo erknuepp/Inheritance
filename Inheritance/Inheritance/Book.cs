@@ -10,9 +10,9 @@
         {
         }
 
-        public void Read()
+        public string Read()
         {
-            throw new NotImplementedException();
+            return "A book is being read";
         }
     }
 }

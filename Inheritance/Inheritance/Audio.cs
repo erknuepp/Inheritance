@@ -11,9 +11,9 @@
 
         }
 
-        public void Play()
+        public string Play()
         {
-            throw new NotImplementedException();
+            return "A piece of audio content is being played";
         }
     }
 }

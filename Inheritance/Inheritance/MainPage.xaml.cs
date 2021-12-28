@@ -56,7 +56,24 @@
             }
             contentTypePicker.SelectedIndex = -1;
             contentTitle.Text = "";
-            contentLibraryListView.ItemsSource = contentLibrary.Contents.Select(x => x.GetTitle()).ToList();
+            contentLibraryListView.ItemsSource = contentLibrary.Contents;
+        }
+
+        public void playButtonClicked(object sender, EventArgs e)
+        {
+            var selectedContentItem = contentLibraryListView.SelectedItem;
+            if (selectedContentItem != null)
+            {
+                if(selectedContentItem is Movie)
+                {
+                    stateMessage.Text = ((Movie)selectedContentItem).Play();
+                }
+            }
+        }
+
+        public void viewButtonClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

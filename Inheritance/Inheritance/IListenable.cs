@@ -2,6 +2,6 @@
 {
     internal interface IListenable
     {
-        void Listen();
+        string Listen();
     }
 }

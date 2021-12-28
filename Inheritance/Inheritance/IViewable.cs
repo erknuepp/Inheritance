@@ -2,6 +2,6 @@
 {
     public interface IViewable
     {
-        void View();
+        string View();
     }
 }

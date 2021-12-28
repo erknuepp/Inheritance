@@ -11,19 +11,19 @@
 
         }
 
-        public void Listen()
+        public string Listen()
         {
-            Console.WriteLine("An movie is being listened to.");
+            return("An movie is being listened to.");
         }
 
-        public void Play()
+        public string Play()
         {
-            Console.WriteLine("An movie is being played.");
+            return("An movie is being played.");
         }
 
-        public void View()
+        public string View()
         {
-            Console.WriteLine("An movie is being viewed.");
+            return("An movie is being viewed.");
         }
     }
 }

@@ -11,14 +11,14 @@
 
         }
 
-        public void Play()
+        public string Play()
         {
-            Console.WriteLine("AudioBook is being listend to.");
+            return("AudioBook is being listend to.");
         }
 
-        public void Read()
+        public string Read()
         {
-            Console.WriteLine("AudioBook is being read.");
+            return("AudioBook is being read.");
         }
     }
 }

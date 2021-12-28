@@ -6,7 +6,7 @@
 
     internal class Content
     {
-        private string _title;
+        private readonly string _title;
 
         public Content(string title)
         {
@@ -16,5 +16,10 @@
         public string GetTitle() { return _title; }
 
         //public void  SetTitle(string title) {  _title = title; }
+
+        public override string ToString()
+        {
+            return _title;
+        }
     }
 }
