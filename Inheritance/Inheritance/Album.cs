@@ -4,7 +4,29 @@
     using System.Collections.Generic;
     using System.Text;
 
-    internal class Album
+    internal class Album : Content, IPlayable, IListenable
     {
+        ICollection<Song> _songs;
+        public Album(string title) : base(title)
+        {
+            _songs = new List<Song>();
+        }
+
+        public Album(string title, ICollection<Song> songs) : base(title)
+        {
+            _songs = songs;
+        }
+
+        public void Play()
+        {
+            Console.WriteLine("An album is being played.");
+        }
+
+        public void Listen()
+        {
+            Console.WriteLine("An album is being listened to.");
+        }
+
+        public int SongCount => _songs.Count;
     }
 }
