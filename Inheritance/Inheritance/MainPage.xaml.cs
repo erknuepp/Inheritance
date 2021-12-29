@@ -101,12 +101,8 @@
             {
                 if (selectedContentItem is Movie movie)
                 {
-                    stateMessage.Text = movie.Play();
-                }
-                if (selectedContentItem is AudioBook audioBook)
-                {
-                    stateMessage.Text = audioBook.Play();
-                }
+                    stateMessage.Text = movie.View();
+                }                
             }
         }
 
