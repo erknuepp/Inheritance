@@ -15,21 +15,20 @@
         public MainPage()
         {
             InitializeComponent();
+
             contentLibrary = new ContentLibrary();
 
-            var contentTypes = new List<string>();
-            contentTypes.Add("Book");
-            contentTypes.Add("AudioBook");
-            contentTypes.Add("Movie");
-            contentTypes.Add("Album");
-            contentTypes.Add("Song");
-
-            contentTypePicker.ItemsSource = contentTypes;
-
-
+            contentTypePicker.ItemsSource = new List<string>
+            {
+                "Book",
+                "AudioBook",
+                "Movie",
+                "Album",
+                "Song"
+            };
         }
 
-        public void addContentButtonClicked(object sender, EventArgs e)
+        public void AddContentButtonClicked(object sender, EventArgs e)
         {
             var contentType = contentTypePicker.SelectedItem as string;
             var title = contentTitle.Text;
@@ -37,19 +36,19 @@
             switch (contentType)
             {
                 case ("Book"):
-                    contentLibrary.Add(new Book(title));
+                    contentLibrary.Contents.Add(new Book(title));
                     break;
                 case ("AudioBook"):
-                    contentLibrary.Add(new AudioBook(title));
+                    contentLibrary.Contents.Add(new AudioBook(title));
                     break;
                 case ("Movie"):
-                    contentLibrary.Add(new Movie(title));
+                    contentLibrary.Contents.Add(new Movie(title));
                     break;
                 case ("Album"):
-                    contentLibrary.Add(new Album(title));
+                    contentLibrary.Contents.Add(new Album(title));
                     break;
                 case ("Song"):
-                    contentLibrary.Add(new Song(title));
+                    contentLibrary.Contents.Add(new Song(title));
                     break;
                 default:
                     break;
@@ -59,21 +58,76 @@
             contentLibraryListView.ItemsSource = contentLibrary.Contents;
         }
 
-        public void playButtonClicked(object sender, EventArgs e)
+        public void PlayButtonClicked(object sender, EventArgs e)
         {
             var selectedContentItem = contentLibraryListView.SelectedItem;
             if (selectedContentItem != null)
             {
-                if(selectedContentItem is Movie)
+                if(selectedContentItem is Movie movie)
                 {
-                    stateMessage.Text = ((Movie)selectedContentItem).Play();
+                    stateMessage.Text = movie.Play();
+                }
+                if (selectedContentItem is Song song)
+                {
+                    stateMessage.Text = song.Play();
+                }
+                if (selectedContentItem is AudioBook audioBook)
+                {
+                    stateMessage.Text = audioBook.Play();
+                }
+                if (selectedContentItem is Album album)
+                {
+                    stateMessage.Text = album.Play();
                 }
             }
         }
 
-        public void viewButtonClicked(object sender, EventArgs e)
+        public void ReadButtonClicked(object sender, EventArgs e)
         {
+            var selectedContentItem = contentLibraryListView.SelectedItem;
+            if (selectedContentItem != null)
+            {
+                if (selectedContentItem is Book book)
+                {
+                    stateMessage.Text = book.Read();
+                }
+            }
+        }
 
+        public void ViewButtonClicked(object sender, EventArgs e)
+        {
+            var selectedContentItem = contentLibraryListView.SelectedItem;
+            if (selectedContentItem != null)
+            {
+                if (selectedContentItem is Movie movie)
+                {
+                    stateMessage.Text = movie.Play();
+                }
+                if (selectedContentItem is AudioBook audioBook)
+                {
+                    stateMessage.Text = audioBook.Play();
+                }
+            }
+        }
+
+        public void ListenButtonClicked(object sender, EventArgs e)
+        {
+            var selectedContentItem = contentLibraryListView.SelectedItem;
+            if (selectedContentItem != null)
+            {
+                if (selectedContentItem is AudioBook audioBook)
+                {
+                    stateMessage.Text = audioBook.Listen();
+                }
+                if (selectedContentItem is Song song)
+                {
+                    stateMessage.Text = song.Listen();
+                }
+                if (selectedContentItem is Album album)
+                {
+                    stateMessage.Text = album.Listen();
+                }
+            }
         }
     }
 }

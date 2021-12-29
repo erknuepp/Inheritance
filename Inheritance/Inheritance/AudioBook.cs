@@ -4,21 +4,21 @@
     using System.Collections.Generic;
     using System.Text;
 
-    internal class AudioBook : Content, IPlayable, IReadable
+    internal class AudioBook : Content, IPlayable, IListenable
     {
         public AudioBook(string title): base(title)
         {
 
         }
 
-        public string Play()
+        public string Listen()
         {
-            return("AudioBook is being listend to.");
+            return ($"AudioBook {base.GetTitle()} is being listened to.");
         }
 
-        public string Read()
+        public string Play()
         {
-            return("AudioBook is being read.");
-        }
+            return($"AudioBook {base.GetTitle()} is being played.");
+        }        
     }
 }

@@ -12,7 +12,7 @@
 
         public string Read()
         {
-            return "A book is being read";
+            return $"The book {base.GetTitle()} is being read";
         }
     }
 }

@@ -13,17 +13,17 @@
 
         public string Listen()
         {
-            return("An movie is being listened to.");
+            return($"The movie {base.GetTitle()} is being listened to.");
         }
 
         public string Play()
         {
-            return("An movie is being played.");
+            return($"The movie {base.GetTitle()} is being played.");
         }
 
         public string View()
         {
-            return("An movie is being viewed.");
+            return($"The movie {base.GetTitle()} is being viewed.");
         }
     }
 }

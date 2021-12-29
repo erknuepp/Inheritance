@@ -4,11 +4,11 @@
 
     internal sealed class ContentLibrary
     {
-        ICollection<Content> contents;
+        System.Collections.ObjectModel.ObservableCollection<Content> contents;
 
         public ContentLibrary()
         {
-            contents = new List<Content>();
+            contents = new System.Collections.ObjectModel.ObservableCollection<Content>();
         }
 
         public void Add(Content content)
@@ -16,6 +16,6 @@
             contents.Add(content);
         }
 
-        public ICollection<Content> Contents => contents; 
+        public System.Collections.ObjectModel.ObservableCollection<Content> Contents => contents; 
     }
 }

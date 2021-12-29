@@ -19,12 +19,12 @@
 
         public string Play()
         {
-            return("A song is being played.");
+            return($"The song {base.GetTitle()} is being played.");
         }
 
         public string Listen()
         {
-            return("A song is being listened to.");
+            return($"The song {base.GetTitle()} is being listened to.");
         }
 
         public TimeSpan PlayTime => playTime;
